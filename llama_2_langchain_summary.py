@@ -469,47 +469,47 @@ horseback, and consider myself a good horseman.
 
 print(llm_chain.run(text))
 
-from langchain.chains.summarize import load_summarize_chain
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-import requests
-# url = "https://www.gutenberg.org/cache/epub/71224/pg71224.txt"
-# response = requests.get(url)
-# if response.status_code == 200:
-#     data = response.text
-url = "/home/widad/summary_project/test-summary.txt"
-with open(url, 'r') as file:
-     data = file.read()
+# from langchain.chains.summarize import load_summarize_chain
+# from langchain.text_splitter import RecursiveCharacterTextSplitter
+# import requests
+# # url = "https://www.gutenberg.org/cache/epub/71224/pg71224.txt"
+# # response = requests.get(url)
+# # if response.status_code == 200:
+# #     data = response.text
+# url = "/home/widad/summary_project/test-summary.txt"
+# with open(url, 'r') as file:
+#      data = file.read()
 
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=150)
-docs = text_splitter.create_documents([data])
+# text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=150)
+# docs = text_splitter.create_documents([data])
 
-print (f"You now have {len(docs)} docs intead of 1 piece of text")
+# print (f"You now have {len(docs)} docs intead of 1 piece of text")
 
-map_prompt = """
-Write a concise summary of the following:
-"{text}"
-CONCISE SUMMARY:
-"""
-map_prompt_template = PromptTemplate(template=map_prompt, input_variables=["text"])
+# map_prompt = """
+# Write a concise summary of the following:
+# "{text}"
+# CONCISE SUMMARY:
+# """
+# map_prompt_template = PromptTemplate(template=map_prompt, input_variables=["text"])
 
-combine_prompt = """
+# combine_prompt = """
 
- Write a concise summary in bullet points of the following text delimited by triple backquotes.
+#  Write a concise summary in bullet points of the following text delimited by triple backquotes.
 
- ```{text}```
- BULLET POINT SUMMARY:
- """
-combine_prompt_template = PromptTemplate(template=combine_prompt, input_variables=["text"])
+#  ```{text}```
+#  BULLET POINT SUMMARY:
+#  """
+# combine_prompt_template = PromptTemplate(template=combine_prompt, input_variables=["text"])
 
-summary_chain = load_summarize_chain(llm=llm,
-  chain_type='map_reduce',
+# summary_chain = load_summarize_chain(llm=llm,
+#   chain_type='map_reduce',
 
- map_prompt=combine_prompt_template,
-  )
+#  map_prompt=combine_prompt_template,
+#   )
 
-output = summary_chain.run(docs)
+# output = summary_chain.run(docs)
 
-print(output)
+# print(output)
 
-torch.cuda.empty_cache()
+# torch.cuda.empty_cache()
 
