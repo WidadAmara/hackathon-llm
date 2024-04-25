@@ -26,13 +26,9 @@ from langchain import PromptTemplate,  LLMChain
 
 template = """
               Write a concise summary of the following text delimited by triple backquotes.
-              Return your response in two formats: in 3  bullet points and a single paragraph.
+              Return your response in a single paragraph.
 
               ```{text}```
-
-              BULLET POINT SUMMARY: 
-              
-
               PARAGRAPH SUMMARY:
               This is where you provide a brief paragraph summarizing the debate.
            """
@@ -41,201 +37,178 @@ prompt = PromptTemplate(template=template, input_variables=["text"])
 
 llm_chain = LLMChain(prompt=prompt, llm=llm)
 
-# text = """
-# BIDEN: How are you doing, man?
+text = """
+CHAPTER I.
 
-#  TRUMP: How are you doing (ph)?
+  PAGE 9.
 
-#  BIDEN: I'm well.
+  Parentage and Childhood; “Lord” Timothy Dexter; At School; In
+  Haverhill; Shoemaking; Early Aspirations; Converted; Must be a
+  Minister; On a Plank; Attend School; A Long Walk; Studies with J. C.
+  Waldo and Dr. Cobb; First Preaching; With W. S. Balch; First Tour;
+  First Debate; Came out Second Best; Talk with an Englishman about
+  American Coarseness; Conversation on Slavery; In Maryland; Talk with
+  an Episcopal Clergyman concerning Endless Woe not being Taught in the
+  Old Testament; Traveling and Preaching on the Eastern Shore; Return
+  to Baltimore; A Storm; Where Truth Flourishes and Where it Does Not;
+  Another Location; Self and Faith Abused; Preach in Harper’s Ferry,
+  Charleston, Winchester, Va.; A Hard Battle; Cross the Alleghany
+  Mountains.
 
-# WALLACE: Gentlemen, a lot of people have been waiting for this night. So let's get going. Our first subject is the Supreme Court.
+  CHAPTER II.
 
-# President Trump, you nominated Amy Coney Barrett over the weekend to succeed the late Ruth Bader Ginsburg on the court.
+  PAGE 33.
 
-# You say the Constitution is clear about your obligation and the Senate's to consider a nominee to the court. Vice President Biden, you say that this is an effort by the president and Republicans to jam through an appointment and what you call an abuse of power.
+  In Pittsburg; S. A. Davis, Wife and Daughter; The West; Preach
+  in Pennsylvania and Ohio; Western Reserve; Talk with a Bigot;
+  Conversation on a Steamboat; Forbidden to Preach; Grave Creek; A
+  Mound; My Study; What is Salvation? Proceedings in Bainbridge; Mud;
+  In Cincinnati; General Harrison; In Rising Sun; Patriot; Preach in
+  Louisville, Ky.; E. M. Pingree; On the Mississippi River; Preach in a
+  Steamboat; In New Orleans; Battle Ground.
 
-#  My first question to both of you tonight, why are you right and make the argument you make, and your opponent wrong? And where do you think a Justice Barrett would take the court?
+  CHAPTER III.
 
-# President Trump, on the first segment you go first. Two minutes.
+  PAGE 47.
 
-# TRUMP: Thank you very much, Chris. I will tell you very simply we won the election. Elections have consequences. We have the Senate, we have the White House and we have a phenomenal nominee respected by all; top, top academic. Good in every way. Good in every way.
+  A Sea Voyage; A Meeting at Sea; Tornado; Strange Vessel; In Texas;
+  Travel to Houston; Hard Fare; The Country; Sleeping on the Ground;
+  Very Thirsty; Must have Water; Colorado River; Sound Asleep on its
+  Banks; Cross the River on Logs; Corn Cake; A Surprise; In Houston;
+  General Houston; The Attorney-General of Texas; San Jacinto Battle
+  Ground; A Pandemonium; Buck Wheat Cakes; Embark for New Orleans; A
+  Condemned Vessel; On Allowance; In New Orleans; A Contrast; Ague and
+  Fever; Up the Mississippi.
 
-# In fact, some of her biggest endorsers are very liberal people from Notre Dame and other places. So I think she's going to be fantastic. We have plenty of time. Even if we did it after the election itself, I have a lot of time after the election, as you know.
+  CHAPTER IV.
 
-# So I think that she will be outstanding. She's going to be as good as anybody that has served on that court. We really feel that. We have a professor at Notre Dame, highly respected by all; said she's the single greatest student he's ever had. He's been a professor for a long time at a great school.
+  PAGE 55.
 
-# And we just -- we won the election and therefore we have the right to choose her, and very few people knowingly would say otherwise.
+  Labors of E. B. Mann; N. Wadsworth; Owner of a Horse; Preach in
+  Indiana and Kentucky; A Profane Life; General Clarke; Atheism; The
+  Eyeless Fish; A Presbyterian Minister’s Wisdom; No Hell, No Heaven;
+  Travel in Ohio; Another Preacher Replies; Labors in Dayton; D. R.
+  Biddlecom; George Messenger; R. Smith’s Somersault; J. A. Gurley;
+  George Rogers; Start for Indiana; Battle in Harrison; Universalism
+  an Old Doctrine, and of God; Partialism an Old Doctrine, but of
+  Satan; Grove Meeting; Father St. John: Badly Treated; John O’Kane
+  on his Creed; In Indianapolis; A. Longley; A Horse; Questioned by a
+  Methodist; In Terre Haute; Very Unpopular.
 
-# And by the way, the Democrats, they wouldn't even think about not doing it. If they had -- the only difference is they'd try and do it faster. There's no way they would give it up. They had Merrick Garland, but the problem is they didn't have the election. So they were stopped.
+  CHAPTER V.
 
-# And probably that would happen in reverse also. Definitely it would happen in reverse. So we won the election and we have the right to do it, Chris.
+  PAGE 74.
 
-# WALLACE: President Trump, thank you. Same question to you, Vice President Biden. You have two minutes.
+  Journey in Ohio; Intemperance; General Baldwin; In Columbus; Death
+  Penalty; How to Deal with Offenders; Preach in Newark and Zanesville;
+  Hell Discussed; Mrs. Frances D. Gage; Invited to Settle in Marietta;
+  W. H. Jolly, In Chillicothe; Opposition in Richmond; --. Webber; In
+  Kentucky; Dr. Chamberlin; Opposition in Lexington; Is Universalism
+  Infidelity? A Slanderous Story by a D.D.; In Paris; Excursion to
+  Patriot; A Discussion; Daniel Parker; Cure the Ague; Good Health.
 
-# BIDEN: Well, first of all, thank you for doing this and looking forward to this, Mr. President.
+  CHAPTER VI.
 
-# TRUMP: Thank you, Joe.
+  PAGE 87.
+
+  A Journey East; Talk with a Baptist Minister; Preach in Delaware and
+  Centerville, Ohio; W. Y. Emmett; Doors Closed; A. Bond; A. B. Grosh;
+  In New England; On the Sea; A Storm; Methodist Preacher Frightened;
+  Blow the Trumpet; In Philadelphia; In Delaware; In Pittsburg; Return
+  to Cincinnati; Go to Chicago; Bad Roads; In Richmond; Talk with
+  a Quaker; A Spirit Returns to Earth; A Spirit Out of the Body; A
+  Strange Sight; Preach in God’s Temple; Preach in Chicago; Preach in
+  Joliet; Aaron Kinney, an Early Preacher; Bill of Fare; Hard Luck in
+  Magnolia; Why Preach; In Hennepin; Political Humbugs; Opposition in
+  Washington; Justice of God; In Pekin and Tremont; Frozen; A Preacher
+  Replies.
+
+  CHAPTER VII.
+
+  PAGE 103.
+
+  Located in Lafayette; The Christian Teacher Commenced; A Circuit;
+  Society Organized; Meeting-house Built; All Alone; Conflict in
+  Frankfort; Old Testament Doctrine of Punishment; Debate Proposed
+  in Frankfort; Discussion in Independence; Character of my Sermons;
+  Slander Refuted; Debate in Burlington; Endless Woe; Some Voting; The
+  Use of Discussion; A Traveler.
+
+  CHAPTER VIII.
+
+  PAGE 119.
+
+  Debate in Lafayette; Die in Adam; Alive in Christ; This World and
+  World to Come; Battle Ground; In Monticello; A Reply; A Preacher
+  Whipped; D. Vines; S. Oyler; I. M. Westfall; B. F. Foster in Indiana;
+  Revival Poetry; Ladoga Camp-Meeting; Worship; In Michigan City; An
+  Episcopal Preacher; A Wet Ride; Debate in Dayton; Discussion in
+  Jefferson; Everlasting Punishment; End of the World; Second Coming of
+  Christ; Eternal Life; Meaning of Everlasting.
+
+  CHAPTER IX.
+
+  PAGE 140.
+
+  Questioned J. O’Kane in Dayton; He Beat a Retreat; He Replied in
+  Crawfordsville; Three Resurrections, National, Moral, and Immortal;
+  Conversation in West Lebanon; Everlasting, Forever; Kingdom of
+  God; Sin, Error, Suffering not Endless; In Southern Indiana; Why
+  Live a Christian Life? Bigotry in Breckenridge; Discussion with
+  Mr. Dickerson; Calvinism; Arminianism; Universalism; Debate in
+  Chambersburg.
+
+  CHAPTER X.
+
+  PAGE 161.
+
+  Move to Terre Haute; Lecture in Fort Wayne; A Discussion There; Dr.
+  Thompson; Visit Illinois; Opposition; Discussion in Charleston;
+  Prayed For; Called Infidel; Debate in Green Castle; Conditions of
+  Salvation; God’s Will; All are Spirits; Form of the Teacher Changed;
+  J. Burt and J. H. Jordan, Editors; Oliver Cromwell; Foundation of
+  Character; In Many Places; A Celebration; Meeting in the Rain; Fourth
+  of July Celebration; Debate in Martinsville.
+
+  CHAPTER XI.
+
+  PAGE 172.
+
+  Journey into Northern Illinois; Temperance Lecture; Result of
+  Temperate Drinking; Married; Homeward Bound; High Waters; Difficult
+  Traveling; Trouble in Crossing Streams; A Cold Bath; End of the
+  “Bridal Tour”; A Hard Ride; Debate with E. Kingsbury; In Northern
+  Indiana; Conversation with an Indian; Dark Man and Dark Night;
+  Explanation of Hebrews ix. 27, 28; End of the World; The Earth and
+  Man.
+
+  CHAPTER XII.
+
+  PAGE 193.
+
+  Discussion in Franklin; Justice of God; What the Gospel Is; Society
+  Organized; Discourse on Total Depravity; Conversation with a
+  Presbyterian Minister on Christian Rewards; Talk with a Catholic;
+  A Methodist; A Presbyterian; A Campbellite; Salvation; A Mormon
+  Sermon; Reply to It; A Journey to Louisville and Cincinnati.
+
+  CHAPTER XIII.
+
+  PAGE 213.
+
  
-# """
+"""
 
-# print(llm_chain.run(text))
+print(llm_chain.run(text))
 
- 
-
-  # CHAPTER IX.
-
-  # PAGE 140.
-
-  # Questioned J. O’Kane in Dayton; He Beat a Retreat; He Replied in
-  # Crawfordsville; Three Resurrections, National, Moral, and Immortal;
-  # Conversation in West Lebanon; Everlasting, Forever; Kingdom of
-  # God; Sin, Error, Suffering not Endless; In Southern Indiana; Why
-  # Live a Christian Life? Bigotry in Breckenridge; Discussion with
-  # Mr. Dickerson; Calvinism; Arminianism; Universalism; Debate in
-  # Chambersburg.
-
-  # CHAPTER X.
-
-  # PAGE 161.
-
-  # Move to Terre Haute; Lecture in Fort Wayne; A Discussion There; Dr.
-  # Thompson; Visit Illinois; Opposition; Discussion in Charleston;
-  # Prayed For; Called Infidel; Debate in Green Castle; Conditions of
-  # Salvation; God’s Will; All are Spirits; Form of the Teacher Changed;
-  # J. Burt and J. H. Jordan, Editors; Oliver Cromwell; Foundation of
-  # Character; In Many Places; A Celebration; Meeting in the Rain; Fourth
-  # of July Celebration; Debate in Martinsville.
-
-  # CHAPTER XI.
-
-  # PAGE 172.
-
-  # Journey into Northern Illinois; Temperance Lecture; Result of
-  # Temperate Drinking; Married; Homeward Bound; High Waters; Difficult
-  # Traveling; Trouble in Crossing Streams; A Cold Bath; End of the
-  # “Bridal Tour”; A Hard Ride; Debate with E. Kingsbury; In Northern
-  # Indiana; Conversation with an Indian; Dark Man and Dark Night;
-  # Explanation of Hebrews ix. 27, 28; End of the World; The Earth and
-  # Man.
-
-  # CHAPTER XII.
-
-  # PAGE 193.
-
-  # Discussion in Franklin; Justice of God; What the Gospel Is; Society
-  # Organized; Discourse on Total Depravity; Conversation with a
-  # Presbyterian Minister on Christian Rewards; Talk with a Catholic;
-  # A Methodist; A Presbyterian; A Campbellite; Salvation; A Mormon
-  # Sermon; Reply to It; A Journey to Louisville and Cincinnati.
-
-  # CHAPTER XIII.
-
-  # PAGE 213.
-
-  # Move to Indianapolis; Extensive Traveling; Henry Ward Beecher; A
-  # Fossiled Calvinist; Supposed to be an Orthodox Preacher; Debate
-  # in New Philadelphia; Strife Between the North and South; The Old
-  # Convention Dead; The New Convention Organized; Discussion in
-  # Springfield, Ill.; Abraham Lincoln; God is Love; Is Merciful; Is
-  # Just; Is Holy; Travel in Illinois; Conversation with a Presbyterian
-  # Clergyman on the Origin of Hell; In Iowa City, and Other Places in
-  # Iowa; Home Again; W. J. Chaplin; Discussion with Benjamin Franklin;
-  # Debate in Covington; Discussion with Mr. Russell; Publish the “One
-  # Hundred and Fifty Reasons”; Review of “Universalism Against Itself”;
-  # Publish Another Book; Olive Branch Discontinued; Travel Far and Near.
-
-  # CHAPTER XIV.
-
-  # PAGE 231.
-
-  # Conclude to go to St. Louis; Commence the Golden Era; Association
-  # in Crawfordsville; Debate in Dayton; Man in God’s Image; God the
-  # Father of All; Man Immortal; Man a Spirit; High Waters; In St. Louis;
-  # Why Moved to St. Louis; But Few Friends; First Journey in Missouri;
-  # Wet, Hungry, Out in the Cold; In Troy; In Ashley; Four Brothers;
-  # In Louisiana; Opposition in London; In Hannibal; Good Friends;
-  # Questioned in Palmyra About Slavery; Conversation on Judgment;
-  # In Memphis; Questioned; A Presbyterian Preacher Replied; Was to
-  # Debate in Newark; Covered with Ice; Missouri River; Discussion in
-  # Georgetown; In Southern Missouri; Questioned in Warsaw; In Jefferson
-  # City; Hard Work in Danville; Return to St. Louis.
-
-  # CHAPTER XV.
-
-  # PAGE 251.
-
-  # The Golden Era Issued Semi-Monthly; The Missourians; Slave Holders;
-  # Travel in Southern Missouri; If Endless Woe is True all Nature would
-  # Weep; Region of Iron; Dunkards in Millersville; In Southern Illinois;
-  # Philosophy of Christ Being the Savior of the World; Refuse to Debate;
-  # Discussion in Carlyle; Inspiration; Our Name; Partialism Approaches
-  # Infidelity; Three Downward Steps; Reply to a Sermon; Hayne’s Sermon;
-  # Mr. Lewis Debating on his Knees; Written Discussions with two
-  # Methodist Ministers; In Northern Missouri; A Preacher Replies; A Log
-  # Cabin; Talk with a Slave; Thomas Abbott; Negroes Hung; The Golden
-  # Era; Mrs. Manford Lecturing; Let Woman Work; A Circuit in Missouri;
-  # Travel in Cold Weather; Debate in Quincy.
-
-  # CHAPTER XVI.
-
-  # PAGE 277.
-
-  # The Golden Era; Extensive Traveling; In Missouri and Kansas; Talk
-  # with a Deist in Jefferson City; Moses; The Prophets; Replied to
-  # in Pisgah; Talk with a Rum-seller; In Kansas City; In Wyandotte;
-  # Conversation with a Clergyman Concerning Christ and his Work;
-  # Lectured in Leavenworth; Destruction of Man’s Enemies; In St. Joseph;
-  # The Mercy of God; In Kingston; Rich Man and Lazarus.
-
-  # CHAPTER XVII.
-
-  # PAGE 293.
-
-  # The Rebellion Commenced; What Senator Douglas Said; Defenders of our
-  # Country; Camp Jackson; Rebel Flag; Great Expectations; Subscribers
-  # Lost; Money Lost; All but Two of the Religious Journals Stopped;
-  # Could do but Little in Missouri; Society in St. Louis; G. S. Weaver
-  # Left; The Unitarian Society; Published Pamphlet on Water Baptism;
-  # Discussion with B. H. Smith; Extracts from the Discussion.
-
-  # CHAPTER XVIII.
-
-  # PAGE 315.
-
-  # Discussion in Pontiac; The Apostle’s Faith; His Argument in Romans;
-  # Extensive Traveling; In Kansas and Missouri; Price’s Raid; In
-  # Ohio and Indiana; Dark Night and Walk in Toledo; Conversation on
-  # Destructionism; The Victory; The Death; President Lincoln; Debate in
-  # Milford, Ohio; The Restitution an old Doctrine; The Sentiment Wide
-  # Spread; At Work in Iowa; Laborers There; Murderers Saved and the
-  # Murdered Lost; Intellectual and Moral Growth; What Man Was; What He
-  # is to Be; The Victory; Spiritualism; Immoral Preaching; Saved Without
-  # Repentance; Preaching a Means of Salvation; A Methodist Minister
-  # Believes; The Suicide.
-
-  # CHAPTER XIX.
-
-  # PAGE 346.
-
-  # Last Campaign; In Galesburg, Ill.; The United States Convention;
-  # Lombard University; Other Schools; Journey to Missouri; In Macon
-  # City; In Brookfield; St. Joseph and Other Cities; Grove Meeting; On
-  # the Missouri Bottom; Beautiful Country; Preach in Fillmore and many
-  # other Places; Return Home; Anti-Orthodox Preaching; Funeral Sermons;
-  # Death; Life; Conclusion.
 
 from langchain.chains.summarize import load_summarize_chain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import requests
-# url = "https://www.gutenberg.org/cache/epub/71224/pg71224.txt"
-# response = requests.get(url)
-# if response.status_code == 200:
-#     data = response.text
 url = "summary_project/test-summary.txt"
 with open(url, 'r') as file:
      data = file.read()
 
-text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n"], chunk_size=500, chunk_overlap=200)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=700, chunk_overlap=150)
 docs = text_splitter.create_documents([data])
 
 print (f"You now have {len(docs)} docs intead of 1 piece of text")
@@ -267,5 +240,4 @@ output = summary_chain.run(docs)
 print(output)
 
 torch.cuda.empty_cache()
-
 
